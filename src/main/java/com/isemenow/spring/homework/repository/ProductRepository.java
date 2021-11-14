@@ -13,7 +13,7 @@ public class ProductRepository {
     private List<Product> products;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         products = new ArrayList<>(List.of(
                 new Product(1L, "Bread", 10),
                 new Product(2L, "Milk", 20),
@@ -23,11 +23,11 @@ public class ProductRepository {
         ));
     }
 
-    public List getAllProductsList(){
+    public List<Product> getAllProductsList() {
         return Collections.unmodifiableList(products);
     }
 
-    public Product getProductById(Long id){
+    public Product getProductById(Long id) {
         return products.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst()
