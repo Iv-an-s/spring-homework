@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${'Product #' + product.id + ' description'}"></h1>
+    <hr>
+    <span th:text="${'title: ' + product.title}"></span><br>
+    <span th:text="${'cost: ' + product.cost + 'coins'}"></span><br>
+    <hr>
+
+    <a th:href="@{'/products'}">На главную страницу</a>
+
+
+</body>
+</html>
