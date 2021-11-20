@@ -26,7 +26,9 @@
                 <td>{{p.id}}</td>
                 <td>{{p.title}}</td>
                 <td>
+                    <button class="btn btn-primary" ng-click="changeCost(p.id, -1)">-</button>
                     {{p.cost}}
+                    <button class="btn btn-primary" ng-click="changeCost(p.id, 1)">+</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Remove</button>

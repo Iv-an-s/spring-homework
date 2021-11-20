@@ -21,4 +21,12 @@ public class ProductService {
     public void removeProduct(Long productID) {
         productRepository.removeProduct(productID);
     }
+
+    public void changeCost(Long productID, Integer delta) {
+        Product product = productRepository.getProductById(productID);
+        Integer cost = product.getCost();
+        if ((cost + delta) >= 1) {
+            product.setCost(cost + delta);
+        }
+    }
 }
