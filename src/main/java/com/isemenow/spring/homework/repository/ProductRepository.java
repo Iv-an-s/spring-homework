@@ -23,7 +23,7 @@ public class ProductRepository {
         ));
     }
 
-    public List getAllProductsList() {
+    public List<Product> getAllProductsList() {
         return Collections.unmodifiableList(products);
     }
 
@@ -32,5 +32,9 @@ public class ProductRepository {
                 .filter(p -> p.getId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("There is no product with such id"));
+    }
+
+    public void removeProduct(Long productID) {
+        products.removeIf(p -> p.getId().equals(productID));
     }
 }

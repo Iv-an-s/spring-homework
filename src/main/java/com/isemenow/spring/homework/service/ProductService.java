@@ -1,7 +1,10 @@
 package com.isemenow.spring.homework.service;
 
+import com.isemenow.spring.homework.model.Product;
 import com.isemenow.spring.homework.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -9,5 +12,13 @@ public class ProductService {
 
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+
+    public List<Product> getAllProductsList() {
+        return productRepository.getAllProductsList();
+    }
+
+    public void removeProduct(Long productID) {
+        productRepository.removeProduct(productID);
     }
 }
