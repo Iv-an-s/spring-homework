@@ -8,19 +8,19 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         });
     };
 
-//    $scope.changeScore = function (studentId, delta) {
-//        $http({
-//            url: contextPath + '/students/change_score',
-//            method: 'GET',
-//            params: {
-//                studentId: studentId,
-//                delta: delta
-//            }
-//        }).then(function(response){
-//            $scope.loadStudents();
-//        });
-//    }
-//
+    $scope.changeCost = function (productID, delta) {
+        $http({
+            url: contextPath + '/products/change_cost',
+            method: 'GET',
+            params: {
+                productID: productID,
+                delta: delta
+            }
+        }).then(function(response){
+            $scope.loadProducts();
+        });
+    }
+
     $scope.deleteProduct = function (productId) {
         $http.get(contextPath + '/products/delete/' + productId)
             .then(function (response) {
@@ -28,6 +28,5 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
                 $scope.loadProducts();
             });
     }
-
     $scope.loadProducts();
 });
